@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-if ( typeof window === 'undefined' ) {
+if (typeof window === 'undefined') {
   require('../../app/count');
   var expect = require('chai').expect;
   var sinon = require('sinon');

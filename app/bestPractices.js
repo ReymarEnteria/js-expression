@@ -8,19 +8,22 @@ exports = typeof window === 'undefined' ? global : window;
  */
 
 exports.bestPracticesAnswers = {
-  globals: function() {
-    myObject = {
-      name: 'Jory'
-    };
+  globals: function () {
 
-    return myObject;
+    name: 'Jory'
+
+    return name;
   },
 
-  parseInt: function(num) {
-    return parseInt(num);
+  parseInt: function (num) {
+    return parseInt(num, 10);
   },
 
-  identity: function(val1, val2) {
-
+  identity: function (val1, val2) {
+    if (val1 === val2) {
+      return true
+    } else {
+      return false
+    }
   }
 };
