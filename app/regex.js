@@ -37,14 +37,7 @@ exports.regexAnswers = {
   },
 
   isUSD: function (str) {
-    let M = /^\d{3},\d{3},\d{3}.\d{2}$/gm
-    let T = /^\d{3},\d{3}.\d{2}$/gm
-    let H = /^\d{3}.\d{2}$/gm
-
-    if (str.match(three) === null) {
-      return false
-    } else {
-      return true
-    }
+    let usd = /^\$((?[0-9]\d{1,3})(,?[0-9]\d{1,3})(,\d{1,3})(.\d{2}))$/gm;
+    console.log(usd.test(str));
   }
 };

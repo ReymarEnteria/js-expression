@@ -55,18 +55,62 @@ exports.arraysAnswers = {
   },
 
   count: function (arr, item) {
+    let c = [...arr], b = [], a;
 
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i + 1; j < arr.length; j++) {
+
+        if (c[i] === c[j] && c[i] === item) {
+          a = c[i];
+          b.push(a);
+        }
+      }
+    }
+
+    return b.length;
   },
 
   duplicates: function (arr) {
+    let c = [...arr], b = [], a;
 
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i + 1; j < arr.length; j++) {
+
+        if (c[i] === c[j]) {
+          a = c[i];
+          b.push(a);
+        }
+      }
+    }
+
+    return _.uniq(b);
   },
 
   square: function (arr) {
+    let a = [];
+    let b;
+    let c = [...arr];
 
+    for (let i = 0; i < arr.length; i++) {
+      b = _.pullAt(c, 0);
+      b = b * b;
+      a.push(b);
+    }
+    return a
   },
 
   findAllOccurrences: function (arr, target) {
+    let a = [];
+    let b;
 
+    for (let i = 0; i < arr.length; i++) {
+      if (_.indexOf(arr, target) === -1) {
+      } else {
+        b = _.indexOf(arr, target)
+        _.pullAt(arr, b)
+        a.push(b + i);
+      }
+    }
+    return a;
   }
 };
